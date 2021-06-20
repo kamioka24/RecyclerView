@@ -36,6 +36,15 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/goToBottomButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/go_to_bottom"
+        app:layout_anchor="@id/memoRecyclerView"
+        app:layout_anchorGravity="top|end" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/goToTopButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

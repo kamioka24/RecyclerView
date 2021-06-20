@@ -2,8 +2,10 @@ package com.example.recyclerview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.widget.Toolbar
+import androidx.core.view.drawToBitmap
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.text.SimpleDateFormat
@@ -15,7 +17,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val goToTopButton = findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.goToTopButton)
-        val appbar = findViewById<com.google.android.material.appbar.AppBarLayout>(R.id.appbar)
+        val goToBottomButton = findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.goToBottomButton)
+        val memoRecyclerView = findViewById<RecyclerView>(R.id.memoRecyclerView)
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         toolbar.setLogo(R.mipmap.ic_launcher) // ツールバーにロゴを設定
         setSupportActionBar(toolbar)
@@ -35,7 +38,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         goToTopButton.setOnClickListener {
-            appbar.scrollTo(0, 0)
+            memoRecyclerView.smoothScrollBy(0, -100000)
+        }
+
+        goToBottomButton.setOnClickListener {
+            memoRecyclerView.smoothScrollBy(0, 100000)
         }
     }
 }
