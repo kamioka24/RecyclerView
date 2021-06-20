@@ -38,7 +38,7 @@
         app:layout_constraintTop_toTopOf="@+id/userName" />
 
     <TextView
-        android:id="@+id/content"
+        android:id="@+id/body"
         android:layout_width="300dp"
         android:layout_height="0dp"
         android:layout_below="@+id/userName"

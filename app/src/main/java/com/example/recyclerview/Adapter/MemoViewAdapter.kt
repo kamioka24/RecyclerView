@@ -14,18 +14,25 @@ class MemoViewAdapter(private val context: Context, private val memoList: List<M
         val userIcon = view.findViewById<ImageView>(R.id.userIcon)
         val userName = view.findViewById<TextView>(R.id.userName)
         val date = view.findViewById<TextView>(R.id.date)
-        val content = view.findViewById<TextView>(R.id.content)
+        val body = view.findViewById<TextView>(R.id.body)
     }
 
+    // 必須メソッド
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemoViewHolder =
-        MemoViewHolder(LayoutInflater.from(context).inflate(R.layout.memo, parent, false))
+        MemoViewHolder(LayoutInflater.from(context).inflate(R.layout.memo_list, parent, false))
 
+    // 必須メソッド (1行の為、省略形)
     override fun getItemCount(): Int = memoList.size
 
+//    override fun getItemCount(): Int {
+//        return memoList.size
+//    }
+
+    // 必須メソッド
     override fun onBindViewHolder(holder: MemoViewHolder, position: Int) {
-        holder.userIcon.setImageResource(R.mipmap.ic_launcher)
+        holder.userIcon.setImageResource(R.drawable.sheep)
         holder.userName.text = memoList[position].userName
         holder.date.text = memoList[position].date
-        holder.content.text = memoList[position].content
+        holder.body.text = memoList[position].body
     }
 }
