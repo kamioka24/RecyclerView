@@ -24,7 +24,7 @@ class MemoViewAdapter(private val context: Context, private val memoList: List<M
 
     override fun onBindViewHolder(holder: MemoViewHolder, position: Int) {
         holder.userIcon.setImageResource(R.mipmap.ic_launcher)
-        holder.userName.text = "ヒカキン"
+        holder.userName.text = memoList[position].userName
         holder.date.text = memoList[position].date
         holder.content.text = memoList[position].content
     }

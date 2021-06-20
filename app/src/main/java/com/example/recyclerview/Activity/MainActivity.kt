@@ -13,10 +13,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // テストデータの生成
-        val date = SimpleDateFormat("yyyy/MM/dd").format(Date())
+        val date = SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Date())
         val memoList = mutableListOf<Memo>()
-        repeat((0..100).count()) {
-            memoList.add(Memo("ヤッホー！！", date))
+        for (i in 1..300) {
+            memoList.add(Memo("羊が${i}匹", "No.${i}", date))
         }
 
         // RecyclerViewにAdapterとLayoutManagerを設定
