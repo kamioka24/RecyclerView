@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // RecyclerViewにAdapterとLayoutManagerを設定
-        findViewById<RecyclerView>(R.id.memoRecyclerView).also {
+        memoRecyclerView.also {
             recyclerView: RecyclerView ->
             recyclerView.adapter = MemoViewAdapter(this, memoList)
             recyclerView.layoutManager = LinearLayoutManager(this)
